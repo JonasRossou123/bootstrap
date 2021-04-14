@@ -1,52 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>First Bootstrap</title>
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carousel</title>
 
-    </head>
+    <!-- Extra links -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
 <body>
-<div class="bd-example">
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="antwerp.jpeg" class="d-block w-100" alt="fotoantwerp">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Antwerp</h5>
-                    <p>"Gij zé ga veur mij."</p>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm p-0">
+            <nav class="navbar navbar-expand-md navbar-light bg-dark text-white">
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        class="navbar-toggler" data-target="#navbarSupportedContent"
+                        data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand text-light" href="#">Carousel</a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a aria-current="page" class="nav-link text-light" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="https://facebook.com">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-disabled="true" class="nav-link disabled text-light" href="#"
+                               tabindex="-1">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="brugge.jpeg" class="d-block w-100" alt="fotobrugge">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Bruges</h5>
-                    <p>“The beauty of sorrow is superior to the beauty of life.”</p>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="bd-example">
+            <div class="carousel slide" data-ride="carousel" id="carouselExampleCaptions">
+                <ol class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#carouselExampleCaptions"></li>
+                    <li data-slide-to="1" data-target="#carouselExampleCaptions"></li>
+                    <li data-slide-to="2" data-target="#carouselExampleCaptions"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active min-vw-100">
+                        <img alt="fotoantwerp" class="d-block w-100" src="antwerp.jpeg">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Antwerp</h5>
+                            <p>"Gij zé ga veur mij."</p>
+                            <a class="btn btn-primary rounded-pill mt-auto m-4" href="https://royalantwerpfc.be/" role="button" data-placement="top" data-toggle="tooltip"
+                            title="Click the button">RAFC</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item min-vw-100 max-vh-10">
+                        <img alt="fotobrugge" class="d-block w-100" src="brugge.jpeg">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Bruges</h5>
+                            <p>“The beauty of sorrow is superior to the beauty of life.”</p>
+                            <a class="btn btn-primary rounded-pill mt-auto m-4" href="https://www.clubbrugge.be/nl" role="button" data-placement="top" data-toggle="tooltip"
+                            title="Click the button">FCB</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item min-vw-100 max-vh-50">
+                        <img alt="fotogent" class="d-block w-100" src="gent.jpeg">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Ghent</h5>
+                            <p>The Bruges of East Flanders.</p>
+                            <a class="btn btn-primary rounded-pill mt-auto m-4" href="https://www.kaagent.be/nl" role="button" data-placement="top" data-toggle="tooltip"
+                            title="Click the button">KAA</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="gent.jpeg" class="d-block w-100" alt="fotogent">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
+                <a class="carousel-control-prev" data-slide="prev" href="#carouselExampleCaptions" role="button">
+                    <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" data-slide="next" href="#carouselExampleCaptions" role="button">
+                    <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+    </div>
+    <div class="row">
+        <div class="col-sm content text-center bg-white p-4 m-4 flex-column d-flex">
+            <img alt="stadhuis antwerp"
+                 class="rounded mx-auto d-block"
+                 height="30"
+                 src="antwerp%20stadhuis.jpeg">
+            <h3 class="display-6 p-3 text-secondary">Antwerp</h3>
+            <p class="text-secondary">"I want more info on this"</p>
+            <a class="btn btn-primary rounded-pill mt-auto m-4" href="#cityhall1" role="button" data-placement="top" data-toggle="tooltip"
+            title="Tooltip on top">View details</a>
+
+        </div>
+        <div class="col-sm content text-center bg-white p-4 m-4 flex-column d-flex">
+            <img alt="stadhuis brugge"
+                 class="rounded mx-auto d-block"
+                 height="30"
+                 src="brugge%20stadhuis.jpeg">
+            <h3 class="display-6 p-3 text-secondary">Bruges</h3>
+            <p class="text-secondary">"I want more info on this"</p>
+            <a class="btn btn-primary rounded-pill mt-auto m-4" href="#cityhall2" role="button" data-placement="top" data-toggle="tooltip"
+            title="Tooltip on top">View details</a>
+
+        </div>
+        <div class="col-sm content text-center bg-white p-4 m-4 flex-column d-flex">
+            <img alt="stadhuis gent"
+                 class="rounded mx-auto d-block"
+                 height="30"
+                 src="gent%20stadhuis.jpeg">
+            <h3 class="display-6 p-3 text-secondary">Ghent</h3>
+            <p class="text-secondary">"I want more info on this"</p>
+            <a class="btn btn-primary rounded-pill mt-auto m-4" href="#cityhall3" role="button" data-placement="top" data-toggle="tooltip"
+                title="Tooltip on top">View details</a>
+        </div>
+    </div>
+    <div class="row">
+        <div id="cityhall1" class="col-md-7 bg-white p-4 m-2 flex-column d-flex justify-content-center" align="right">
+            <h1>City Hall Antwerp</h1>
+            <p>Antwerp’s town hall is of capital cultural importance as it is one of the first examples of Renaissance
+                architecture in the Low Countries. The building has a long and colourful history and has been in use
+                since the sixteenth century. There is to plenty to see on the outside and inside of the city’s
+                stateliest building. The Renaissance façade, the magnificent halls, and several artworks. The façade is
+                decorated with the flags of the 28 countries of the European Union, in addition to flags of all the
+                countries that have a consulate in Antwerp.</p>
+        </div>
+        <div class="col-md bg-white p-4 m-2 flex-column d-flex">
+            <img alt="Responsive image" class="img-thumbnail " src="antwerp%20stadhuis.jpeg" style="width: 300px;">
+        </div>
+    </div>
+    <div class="row">
+        <div id="cityhall2" class="col-md bg-white p-4 m-2 flex-row-reverse d-flex">
+            <img alt="Responsive image" class="img-thumbnail" src="brugge%20stadhuis.jpeg" style="width: 300px;">
+        </div>
+        <div class="col-md-7 bg-white p-4 m-2 flex-column d-flex justify-content-center">
+            <h1>City Hall Bruges</h1>
+            <p>The monumental City Hall (1376-1421) is one of the oldest in the Low Countries. It is from here that the
+                city has been governed for more than 600 years. An absolute masterpiece is the Gothic Hall, with its
+                impressive vault and 20th century murals depicting the history of Bruges. The adjacent historic hall
+                sheds further light on the governance of Bruges over the centuries, using original documents and
+                paintings. On the ground floor, you are brought face to face with life-size portraits of the city’s
+                rulers and can also learn more about the evolution of the Burg.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div id="cityhall3" class="col-md-7 bg-white p-4 m-2 flex-column d-flex justify-content-center" align="right">
+            <h1>City Hall Ghent</h1>
+            <p>This schizophrenic building is in two parts, as you can clearly see, making it a fascinating sight in
+                political Ghent. The façade on the Hoogpoort side shows you the flamboyant Late Gothic style that dates
+                from the early 16th century. This style is in sharp contrast to the Renaissance style on the Botermarkt
+                side. In this later wing (1559 -1618), you will see three-quarter Doric, Ionic and Corinthian columns
+                and pilasters inspired by Italian palazzi.
+            </p>
+        </div>
+        <div class="col-md bg-white p-4 m-2 flex-column d-flex">
+            <img alt="Responsive image" class="img-thumbnail" src="gent%20stadhuis.jpeg" style="width: 300px;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11">
+            <p>Copyright 2021 Jonas Inc. | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+        </div>
+        <div class="col-md-1">
+            <p><a href="#">Back to top</a></p>
+        </div>
     </div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
